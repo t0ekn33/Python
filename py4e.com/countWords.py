@@ -1,8 +1,8 @@
-name = input('Enter file:')
-handle = open(name, 'r')
+#name = input('Enter file:')
+file_in = open('py4e.com\HDD.txt', 'rt')
 counts = dict()
 
-for line in handle:
+for line in file_in:
     words = line.split()
     for word in words:
         counts[word] = counts.get(word, 0) + 1
