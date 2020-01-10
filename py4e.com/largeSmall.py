@@ -1,4 +1,15 @@
+
+""""
+def min(values) :
+    smaller = None
+    for value in values:
+        if smaller is None or value < smaller:
+            smaller = value
+        return smaller
+"""
+
 largest = None
+
 print("Before:", largest)
 for itervar in [3, 41,12,9,74,15]:
     if largest is None or itervar > largest:
@@ -15,9 +26,7 @@ for svar in [3, 41, 12, 9, 75, 1]:
     print("Loop:", svar, "Smallest:", smallest)
 print("Smallest:", smallest)
 
-def min(values):
-    smaller = None
-    for value in values:
-        if smaller is None or value < smaller:
-            smaller = value
-        return smaller
+listA = [3, 8, 11, 22, 45, 99]
+print("min: ", min(listA))
+listB = [3, 8, 11, 22, 45, 99]
+print("max: ", max(listB))
