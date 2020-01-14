@@ -1,4 +1,6 @@
 """
+Tony Salazar
+14JAN2020
 Create a program that calls a function that simulates the rolling of a pair of dice.
 Use randrange from the random module to accomplish this. Your main program
 will deal with the total of the two dice.
@@ -16,7 +18,6 @@ the rules are as follows:
 means play again. Anything else ends play. A balance of $0 ends play
 automatically.
 """
-import sys
 from random import randrange as rr
 
 def roll_dice():
@@ -30,16 +31,22 @@ cnt = 0
 print("Starting balance: $", bal, sep = '')
 
 while ans == 'y' or ans == 'Y':
+    # Check for cash
+    if bal <= 0:
+        print("You are broke, goodbye!")
+        break
     # First role of the dice
     roll1 = roll_dice()
     bal -= 10   #Place your bet
     print("First roll:", roll1)
     cnt += 1
+    # 7 or 11 on first roll wins
     if roll1 == 7 or roll1 == 11:
         print("Winner!")
         bal += 20
         print("Balance: $", bal, sep = '')
         ans = input("Play again? y/n:")
+    # 2, 3, or 12 on first roll loses
     elif roll1 == 2 or roll1 == 3 or roll1 == 12:
         print("You lose!")
         print("Balance: $", bal, sep = '')
@@ -47,16 +54,18 @@ while ans == 'y' or ans == 'Y':
     else:
         point = roll1   # Set game point
         print("Point:", point)
-        # Subsequent rolls
-        roll = roll_dice() # Roll dice
+        # Roll dice until 7 or point 
+        roll = roll_dice() 
         print(roll, end = ' ')
         while True:
+            # Roll point wins
             if roll == point:
                 print("Winner!")
                 bal += 20
                 print("Balance: $", bal, sep = '')
                 ans = input("Play again? y/n:")
                 break
+            # Roll 7 loses
             elif roll == 7:
                 print("You lose!")
                 print("Balance: $", bal, sep = '')
@@ -67,4 +76,3 @@ while ans == 'y' or ans == 'Y':
                 print(roll, end = ' ')
 print("Number of plays:", cnt)
 print("Ending balance: $", bal, sep = '')
-     
