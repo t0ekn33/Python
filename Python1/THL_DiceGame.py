@@ -1,6 +1,7 @@
 """
 Tony Salazar
 14JAN2020
+Take-Home LAB
 Create a program that calls a function that simulates the rolling of a pair of dice.
 Use randrange from the random module to accomplish this. Your main program
 will deal with the total of the two dice.
