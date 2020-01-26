@@ -12,8 +12,8 @@ characters. My solution to Lab 02b contains an example of !r.
 """
 from string import printable
 
- for num in range(32, 127):
-     print(chr(num), end=" ")
+for num in range(32, 127):
+    print(chr(num), end=" ")
 
 x = 32 
 
