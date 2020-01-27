@@ -14,14 +14,24 @@ Your results should be in the area of 40% to 60%.
 """
 
 from random import randrange 
-dupDay = [] 
 
-from random import randrange 
-def day():
-    return randrange(1,366)
+def rand_day():
+    rando = randrange(1, 366)
+    return(rando)
 
-for cnt in range (1, 100):
-    dupDay = day()
-    for d in dupDay:
-        if d == dupDay:
-            print(dupDay[d])
+tests = 100
+same_day = 0 
+for test in range(tests):
+    bday = []
+    #print(test) # 1-100
+    for cnt in range(23):
+        bday.append(randrange(1, 366))
+        #bday.append(rand_day)
+    for day in bday:
+        if bday.count(day) > 1:
+            same_day += 1
+            break 
+        
+print("{0:d} sets of 23 people had the same bday in {1:,d} trials.".format(same_day, tests))
+
+
