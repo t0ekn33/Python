@@ -20,13 +20,7 @@ x = 32
 while x <= 126:
     asci = chr(x)
     print(asci, end = " ")
-    num = ord(asci)
-    #print(num, asci)
     x += 1
     
-result = string.printable
-
-"""
-num = ord("!")
-print(num)
-"""
+for num in printable:
+    print('{0!r:6} {1:d}'.format(num, ord(num))) #print ascii up to 6 places and print (d)ecimal

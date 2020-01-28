@@ -14,7 +14,7 @@ from string import printable
 for temp_num in range(32, 127):
     print(chr(temp_num), end=' ')
 print()
-input('Press enter to continue')
+#input('Press enter to continue')
 
 for temp_chr in printable:
     print('{0!r:6} {1:d}'.format(temp_chr, ord(temp_chr)))
