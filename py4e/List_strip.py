@@ -1,3 +1,4 @@
+#List strip
 fin = open("py4e/mbox-short.txt")
 for line in fin:
     line = line.rstrip() #remove trailing whitespace
