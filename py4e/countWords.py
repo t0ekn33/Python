@@ -1,9 +1,10 @@
 #name = input('Enter file:')
-file_in = open('py4e.com\HDD.txt', 'rt')
+file_in = open('py4e\HDD.txt', 'rt')
 counts = dict()
 
 for line in file_in:
     words = line.split()
+    print(words)
     for word in words:
         counts[word] = counts.get(word, 0) + 1
 
@@ -14,4 +15,4 @@ for word, count in list(counts.items()):
         bigword = word
         bigcount = count
 
-print(bigword, bigcount)
+print("Word:", bigword, "Count:", bigcount)
